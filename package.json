@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/ramirezlp/buildingsolutions#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.12.11",
+    "reload": "^3.1.1",
+    "url-parse": "^1.5.1"
   }
 }
