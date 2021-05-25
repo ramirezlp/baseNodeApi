@@ -1,0 +1,22 @@
+{
+  "name": "buildingsolutions",
+  "version": "1.0.0",
+  "description": "Building Solutions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramirezlp/buildingsolutions.git"
+  },
+  "author": "Agustin Ramirez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramirezlp/buildingsolutions/issues"
+  },
+  "homepage": "https://github.com/ramirezlp/buildingsolutions#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
