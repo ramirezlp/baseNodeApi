@@ -63,13 +63,11 @@ remove: function(req, res) {
     }
     return res.json(usuario)
   })
-}
-}
+},
 
-/*
 update: function(req, res) {
   var id = req.params.id
-  Usuario.findOne({_id: id}, function(err, usuario){
+  Usuario.findOneAndUpdate(id, req.body, function(err, usuario){
     if(err) {
       return res.status(500).json({
         message: 'Se ha producido un error al guardar la usuario',
@@ -81,24 +79,13 @@ update: function(req, res) {
         message: 'No hemos encontrado la usuario'
       })
     }
-    usuario.Nombre = req.body.nombre
-    usuario.Descripción =  req.body.descripcion
-    usuario.Graduacion = req.body.graduacion
-    usuario.Envase = req.body.envase
-    usuario.Precio = req.body.precio
-    usuario.save(function(err, usuario){
-      if(err) {
-        return res.status(500).json({
-          message: 'Error al guardar la usuario'
-        })
-      }
-      if(!usuario) {
-        return res.status(404).json({
-          message: 'No hemos encontrado la usuario'
-        })
-      }
-      return res.json(usuario)
+      return res.json({
+        msj: "Cambios aplicados correctamente para el id: "+id
+      })
     })
-  })
-},
-*/
+}
+
+}
+
+
+

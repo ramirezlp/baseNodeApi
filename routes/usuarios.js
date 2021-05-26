@@ -2,22 +2,25 @@ var router = require('express').Router()
 var usuarioController = require ('../controllers/usuarioController')
 
   router.get('/search', function(req, res) {
-    res.json({ message: 'Vas a buscar una cerveza' })
+    usuarioController.search(req, res)
   })
   router.get('/', function(req, res) {
     usuarioController.list(req,res)    
   })
 
   router.get('/:id', function(req, res) {
-    res.json({ message: 'Vas a obtener la cerveza con id ' + req.params.id })
+    usuarioController.show(req, res)
   })
+  
   router.post('/', function(req, res) {
-    res.json({ message: 'Vas a añadir una cerveza' })
+    usuarioController.create(req,res)
   })
+
   router.put('/:id', function(req, res) {
-    res.json({ message: 'Vas a actualizar la cerveza con id ' + req.params.id })
+    usuarioController.update(req,res)
   })
+  
   router.delete('/:id', function(req, res) {
-    res.json({ message: 'Vas a borrar la cerveza con id ' + req.params.id})
+    usuarioController.remove(req, res)
   })
   module.exports = router

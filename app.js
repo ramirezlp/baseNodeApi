@@ -1,5 +1,11 @@
 var express = require('express') //llamamos a Express
-var app = express()           
+const bodyParser = require("body-parser");
+var app = express()  
+
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));      
 
 var port = process.env.PORT || 8080  // establecemos nuestro puerto
 
@@ -10,6 +16,8 @@ require('./db')
 // para establecer las distintas rutas, necesitamos instanciar el express router
 var router = require('./routes')  
 app.use('/api', router)
+
+
 
 // iniciamos nuestro servidor
 app.listen(port)
