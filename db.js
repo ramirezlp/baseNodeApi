@@ -4,7 +4,7 @@ var MONGO_URL = process.env.MONGO_URL || 'mongodb+srv://ramirezlp:Aluminio9@clus
 mongoose.connect(MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true})
 
 mongoose.connection.on('connected', function () {
-  console.log('Conectado a la base de datos: ' + MONGO_URL)
+  console.log('Conectado exitosamente a la base de datos!')
 })
 
 mongoose.connection.on('error',function (err) {
