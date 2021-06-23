@@ -1,4 +1,7 @@
 var Usuario = require('../models/Usuario')
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 module.exports = {
 // https://docs.mongodb.com/v3.0/reference/operator/query/text/
 search: function (req, res) {
@@ -40,18 +43,22 @@ show: function(req, res) {
 },
 create: function(req, res) {
   var usuario = new Usuario (req.body)
-  usuario.save(function(err, usuario){
-    if(err) {
-      return res.status(500).json( {
-        message: 'Error al guardar la usuario',
-        error: err
+  bcrypt.hash(usuario.password, saltRounds, (err, hash) => {
+    usuario.password = hash;
+    usuario.save(function(err, usuario){
+      if(err) {
+        return res.status(500).json( {
+          message: 'Error al guardar la usuario',
+          error: err
+        })
+      }
+      return res.status(201).json({
+        message: 'saved',
+        _id: usuario._id
       })
-    }
-    return res.status(201).json({
-      message: 'saved',
-      _id: usuario._id
     })
-  })
+  });
+
 },
 remove: function(req, res) {
   var id = req.params.id

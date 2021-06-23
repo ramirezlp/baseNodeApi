@@ -7,7 +7,7 @@ Commands
 npm init 
 npm install --save express
 npm i -S express
-
+npm install --save bcrypt
 npm i -D nodemon
 
 Cada vez que ejecutemos npm start ejecutaremos nodemon en vez de node. Habrá que cambiar el script en el fichero package.json:

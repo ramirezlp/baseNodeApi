@@ -1,7 +1,13 @@
 var express = require('express') //llamamos a Express
-const bodyParser = require("body-parser");
+const jwt = require('jsonwebtoken')
+const config = require('./configs/config')
+
+
 var app = express()  
 
+
+
+app.set('llave', config.llave);
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
