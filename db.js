@@ -1,6 +1,6 @@
 //incluimos Mongoose y abrimos una conexión
 var mongoose = require('mongoose')
-var MONGO_URL = process.env.MONGO_URL || 'mongodb+srv://ramirezlp:1y9YqP3myiyFMJc2@cluster0.9gvha.mongodb.net/building'
+var MONGO_URL = process.env.MONGO_URL || 'mongodb+srv://user:password@host'
 mongoose.connect(MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true})
 
 mongoose.connection.on('connected', function () {
